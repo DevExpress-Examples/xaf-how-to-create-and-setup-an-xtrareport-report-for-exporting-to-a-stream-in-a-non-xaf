@@ -26,6 +26,7 @@ Namespace ExportXafReport
         ' register your application types here
         Private Shared Sub RegisterBOTypes(ByVal typesInfo As ITypesInfo)
             typesInfo.RegisterEntity(GetType(Employee))
+            typesInfo.RegisterEntity(GetType(ReportDataV2))
         End Sub
         Private Shared Function CreateObjectSpaceProvider() As EFObjectSpaceProvider
             Dim objectSpaceProvider As New EFObjectSpaceProvider(GetType(ExportReportDemoEFDbContext), connectionString)
