@@ -1,4 +1,4 @@
-﻿Imports System
+Imports System
 Imports DevExpress.ExpressApp
 Imports DevExpress.ExpressApp.DC
 Imports System.Collections.Generic
@@ -10,6 +10,7 @@ Imports ExportReportDemo.Module.BusinessObjects
 Imports ExportReportDemo.Module.Reports
 
 Namespace ExportReportDemo.Module
+
     Public NotInheritable Partial Class ExportReportDemoModule
         Inherits ModuleBase
 
@@ -17,15 +18,18 @@ Namespace ExportReportDemo.Module
             InitializeComponent()
             BaseObject.OidInitializationMode = OidInitializationMode.AfterConstruction
         End Sub
+
         Public Overrides Function GetModuleUpdaters(ByVal objectSpace As IObjectSpace, ByVal versionFromDB As Version) As IEnumerable(Of ModuleUpdater)
             Dim updater As ModuleUpdater = New DatabaseUpdate.Updater(objectSpace, versionFromDB)
-            Dim predefinedReportsUpdater As New PredefinedReportsUpdater(Application, objectSpace, versionFromDB)
+            Dim predefinedReportsUpdater As PredefinedReportsUpdater = New PredefinedReportsUpdater(Application, objectSpace, versionFromDB)
             predefinedReportsUpdater.AddPredefinedReport(Of EmployeesReport)("Employees Report", GetType(Employee), True)
-            Return New ModuleUpdater() { updater, predefinedReportsUpdater }
+            Return New ModuleUpdater() {updater, predefinedReportsUpdater}
         End Function
+
         Public Overrides Sub Setup(ByVal application As XafApplication)
             MyBase.Setup(application)
         End Sub
+
         Public Overrides Sub CustomizeTypesInfo(ByVal typesInfo As ITypesInfo)
             MyBase.CustomizeTypesInfo(typesInfo)
             CalculatedPersistentAliasHelper.CustomizeTypesInfo(typesInfo)

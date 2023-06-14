@@ -1,5 +1,7 @@
-﻿Namespace ExportReportDemoEF.Module.Reports
-    Partial Public Class EmployeesReport
+Namespace ExportReportDemoEF.[Module].Reports
+
+    Partial Class EmployeesReport
+
         ''' <summary>
         ''' Required designer variable.
         ''' </summary>
@@ -10,14 +12,14 @@
         ''' </summary>
         ''' <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         Protected Overrides Sub Dispose(ByVal disposing As Boolean)
-            If disposing AndAlso (components IsNot Nothing) Then
-                components.Dispose()
+            If disposing AndAlso (Me.components IsNot Nothing) Then
+                Me.components.Dispose()
             End If
+
             MyBase.Dispose(disposing)
         End Sub
 
-        #Region "Designer generated code"
-
+'#Region "Designer generated code"
         ''' <summary>
         ''' Required method for Designer support - do not modify
         ''' the contents of this method with the code editor.
@@ -41,12 +43,12 @@
             Me.DataField = New DevExpress.XtraReports.UI.XRControlStyle()
             Me.topMarginBand1 = New DevExpress.XtraReports.UI.TopMarginBand()
             Me.bottomMarginBand1 = New DevExpress.XtraReports.UI.BottomMarginBand()
-            DirectCast(Me.collectionDataSource1, System.ComponentModel.ISupportInitialize).BeginInit()
-            DirectCast(Me, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.collectionDataSource1), System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me), System.ComponentModel.ISupportInitialize).BeginInit()
             ' 
             ' Detail
             ' 
-            Me.Detail.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() { Me.xrLabel1, Me.xrLabel2, Me.xrLabel3, Me.xrLabel4, Me.xrLine1})
+            Me.Detail.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.xrLabel1, Me.xrLabel2, Me.xrLabel3, Me.xrLabel4, Me.xrLine1})
             Me.Detail.HeightF = 56F
             Me.Detail.Name = "Detail"
             Me.Detail.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F)
@@ -78,7 +80,7 @@
             ' 
             ' xrLabel3
             ' 
-            Me.xrLabel3.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() { New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "FullName")})
+            Me.xrLabel3.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "FullName")})
             Me.xrLabel3.LocationFloat = New DevExpress.Utils.PointFloat(174F, 9F)
             Me.xrLabel3.Name = "xrLabel3"
             Me.xrLabel3.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F)
@@ -88,7 +90,7 @@
             ' 
             ' xrLabel4
             ' 
-            Me.xrLabel4.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() { New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Position")})
+            Me.xrLabel4.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Position")})
             Me.xrLabel4.LocationFloat = New DevExpress.Utils.PointFloat(174F, 33F)
             Me.xrLabel4.Name = "xrLabel4"
             Me.xrLabel4.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F)
@@ -104,7 +106,7 @@
             ' 
             ' pageFooterBand1
             ' 
-            Me.pageFooterBand1.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() { Me.xrPageInfo1, Me.xrPageInfo2})
+            Me.pageFooterBand1.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.xrPageInfo1, Me.xrPageInfo2})
             Me.pageFooterBand1.HeightF = 29F
             Me.pageFooterBand1.Name = "pageFooterBand1"
             ' 
@@ -129,7 +131,7 @@
             ' 
             ' reportHeaderBand1
             ' 
-            Me.reportHeaderBand1.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() { Me.xrLabel5})
+            Me.reportHeaderBand1.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.xrLabel5})
             Me.reportHeaderBand1.HeightF = 61F
             Me.reportHeaderBand1.Name = "reportHeaderBand1"
             ' 
@@ -195,34 +197,49 @@
             ' 
             ' EmployeesReport
             ' 
-            Me.Bands.AddRange(New DevExpress.XtraReports.UI.Band() { Me.Detail, Me.pageFooterBand1, Me.reportHeaderBand1, Me.topMarginBand1, Me.bottomMarginBand1})
+            Me.Bands.AddRange(New DevExpress.XtraReports.UI.Band() {Me.Detail, Me.pageFooterBand1, Me.reportHeaderBand1, Me.topMarginBand1, Me.bottomMarginBand1})
             Me.DataSource = Me.collectionDataSource1
-            Me.StyleSheet.AddRange(New DevExpress.XtraReports.UI.XRControlStyle() { Me.Title, Me.FieldCaption, Me.PageInfo, Me.DataField})
+            Me.StyleSheet.AddRange(New DevExpress.XtraReports.UI.XRControlStyle() {Me.Title, Me.FieldCaption, Me.PageInfo, Me.DataField})
             Me.Version = "14.2"
-            DirectCast(Me.collectionDataSource1, System.ComponentModel.ISupportInitialize).EndInit()
-            DirectCast(Me, System.ComponentModel.ISupportInitialize).EndInit()
-
+            CType((Me.collectionDataSource1), System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me), System.ComponentModel.ISupportInitialize).EndInit()
         End Sub
 
-        #End Region
-
+'#End Region
         Private Detail As DevExpress.XtraReports.UI.DetailBand
+
         Protected collectionDataSource1 As DevExpress.Persistent.Base.ReportsV2.CollectionDataSource
+
         Private xrLabel1 As DevExpress.XtraReports.UI.XRLabel
+
         Private xrLabel2 As DevExpress.XtraReports.UI.XRLabel
+
         Private xrLabel3 As DevExpress.XtraReports.UI.XRLabel
+
         Private xrLabel4 As DevExpress.XtraReports.UI.XRLabel
+
         Private xrLine1 As DevExpress.XtraReports.UI.XRLine
+
         Private pageFooterBand1 As DevExpress.XtraReports.UI.PageFooterBand
+
         Private xrPageInfo1 As DevExpress.XtraReports.UI.XRPageInfo
+
         Private xrPageInfo2 As DevExpress.XtraReports.UI.XRPageInfo
+
         Private reportHeaderBand1 As DevExpress.XtraReports.UI.ReportHeaderBand
+
         Private xrLabel5 As DevExpress.XtraReports.UI.XRLabel
+
         Private Title As DevExpress.XtraReports.UI.XRControlStyle
+
         Private FieldCaption As DevExpress.XtraReports.UI.XRControlStyle
+
         Private PageInfo As DevExpress.XtraReports.UI.XRControlStyle
+
         Private DataField As DevExpress.XtraReports.UI.XRControlStyle
+
         Private topMarginBand1 As DevExpress.XtraReports.UI.TopMarginBand
+
         Private bottomMarginBand1 As DevExpress.XtraReports.UI.BottomMarginBand
     End Class
 End Namespace
