@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DevExpress.ExpressApp.EFCore" Version="22.2.6" />
+    <PackageReference Include="DevExpress.ExpressApp.ReportsV2.Blazor" Version="22.2.6" />
+    <PackageReference Include="DevExpress.Persistent.BaseImpl.EFCore" Version="22.2.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ExportReportEF.Module\ExportReportEF.Module.csproj" />
+  </ItemGroup>
+
+</Project>
