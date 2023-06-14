@@ -33,7 +33,7 @@ public sealed class ExportReportModule : ModuleBase {
         ModuleUpdater updater = new DatabaseUpdate.Updater(objectSpace, versionFromDB);
         PredefinedReportsUpdater predefinedReportsUpdater =
       new PredefinedReportsUpdater(Application, objectSpace, versionFromDB);
-        predefinedReportsUpdater.AddPredefinedReport<EmployeesReport>("Contacts Report", typeof(Employee));
+        predefinedReportsUpdater.AddPredefinedReport<EmployeesReport>("Employees Report", typeof(Employee));
         return new ModuleUpdater[] { updater, predefinedReportsUpdater };
     }
     public override void Setup(XafApplication application) {

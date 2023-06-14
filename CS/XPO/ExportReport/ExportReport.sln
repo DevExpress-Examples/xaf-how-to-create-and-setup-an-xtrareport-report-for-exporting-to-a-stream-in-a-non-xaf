@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExportReport.Module", "Expo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExportReport.Blazor.Server", "ExportReport.Blazor.Server\ExportReport.Blazor.Server.csproj", "{52781FAD-3359-416D-8806-B7D31864F909}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExportXAFReport", "ExportXAFReport\ExportXAFReport.csproj", "{76D9DA3B-AFE0-4B50-8333-19A44E7D6CAF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +28,12 @@ Global
 		{52781FAD-3359-416D-8806-B7D31864F909}.EasyTest|Any CPU.Build.0 = EasyTest|Any CPU
 		{52781FAD-3359-416D-8806-B7D31864F909}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{52781FAD-3359-416D-8806-B7D31864F909}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76D9DA3B-AFE0-4B50-8333-19A44E7D6CAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76D9DA3B-AFE0-4B50-8333-19A44E7D6CAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76D9DA3B-AFE0-4B50-8333-19A44E7D6CAF}.EasyTest|Any CPU.ActiveCfg = Debug|Any CPU
+		{76D9DA3B-AFE0-4B50-8333-19A44E7D6CAF}.EasyTest|Any CPU.Build.0 = Debug|Any CPU
+		{76D9DA3B-AFE0-4B50-8333-19A44E7D6CAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76D9DA3B-AFE0-4B50-8333-19A44E7D6CAF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
