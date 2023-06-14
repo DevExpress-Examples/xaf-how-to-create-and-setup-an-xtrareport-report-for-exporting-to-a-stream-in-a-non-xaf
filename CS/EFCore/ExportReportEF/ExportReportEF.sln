@@ -3,7 +3,30 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33424.131
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExportReportEF.Module", "ExportReportEF.Module\ExportReportEF.Module.csproj", "{DA1FB555-26B7-4617-AD0B-C73EDFB88453}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExportReportEF.Blazor.Server", "ExportReportEF.Blazor.Server\ExportReportEF.Blazor.Server.csproj", "{5BE1481E-A2A3-49F3-8A13-111E4656AC33}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		EasyTest|Any CPU = EasyTest|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DA1FB555-26B7-4617-AD0B-C73EDFB88453}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA1FB555-26B7-4617-AD0B-C73EDFB88453}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA1FB555-26B7-4617-AD0B-C73EDFB88453}.EasyTest|Any CPU.ActiveCfg = EasyTest|Any CPU
+		{DA1FB555-26B7-4617-AD0B-C73EDFB88453}.EasyTest|Any CPU.Build.0 = EasyTest|Any CPU
+		{DA1FB555-26B7-4617-AD0B-C73EDFB88453}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA1FB555-26B7-4617-AD0B-C73EDFB88453}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BE1481E-A2A3-49F3-8A13-111E4656AC33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BE1481E-A2A3-49F3-8A13-111E4656AC33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BE1481E-A2A3-49F3-8A13-111E4656AC33}.EasyTest|Any CPU.ActiveCfg = EasyTest|Any CPU
+		{5BE1481E-A2A3-49F3-8A13-111E4656AC33}.EasyTest|Any CPU.Build.0 = EasyTest|Any CPU
+		{5BE1481E-A2A3-49F3-8A13-111E4656AC33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BE1481E-A2A3-49F3-8A13-111E4656AC33}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection

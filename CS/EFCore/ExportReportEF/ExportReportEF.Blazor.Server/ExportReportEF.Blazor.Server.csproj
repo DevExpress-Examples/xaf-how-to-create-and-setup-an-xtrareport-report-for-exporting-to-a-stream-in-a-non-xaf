@@ -21,4 +21,7 @@
     <PackageReference Include="DevExpress.ExpressApp.CodeAnalysis" Version="22.2.6" />
     <PackageReference Include="DevExpress.ExpressApp.ReportsV2.Blazor" Version="22.2.6" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ExportReportEF.Module\ExportReportEF.Module.csproj" />
+  </ItemGroup>
 </Project>

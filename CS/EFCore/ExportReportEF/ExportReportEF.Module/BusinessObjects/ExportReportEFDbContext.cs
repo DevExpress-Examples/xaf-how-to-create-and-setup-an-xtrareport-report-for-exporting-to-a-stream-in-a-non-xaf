@@ -5,6 +5,7 @@ using DevExpress.Persistent.BaseImpl.EF.PermissionPolicy;
 using DevExpress.Persistent.BaseImpl.EF;
 using DevExpress.ExpressApp.Design;
 using DevExpress.ExpressApp.EFCore.DesignTime;
+using ExportReportDemo.Module.BusinessObjects;
 
 namespace ExportReportEF.Module.BusinessObjects;
 
@@ -36,6 +37,7 @@ public class ExportReportEFEFCoreDbContext : DbContext {
 	}
 	//public DbSet<ModuleInfo> ModulesInfo { get; set; }
 	public DbSet<ReportDataV2> ReportDataV2 { get; set; }
+	public DbSet<Employee> Employees { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder) {
         base.OnModelCreating(modelBuilder);
