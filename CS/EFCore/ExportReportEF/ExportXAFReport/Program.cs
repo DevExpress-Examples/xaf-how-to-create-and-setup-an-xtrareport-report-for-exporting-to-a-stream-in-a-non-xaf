@@ -28,9 +28,7 @@ namespace MyApp // Note: actual namespace depends on the project name.
         }
         private static EFCoreObjectSpaceProvider<ExportReportEFEFCoreDbContext> CreateObjectSpaceProvider() {
             EFCoreObjectSpaceProvider<ExportReportEFEFCoreDbContext> objectSpaceProvider = new EFCoreObjectSpaceProvider<ExportReportEFEFCoreDbContext>(
-                (builder, _) => {
-                    builder.UseSqlServer(connectionString).UseChangeTrackingProxies();
-                }
+                (builder, _) => {builder.UseSqlServer(connectionString).UseChangeTrackingProxies();}
                 );
             ((TypesInfo)XafTypesInfo.Instance).AddEntityStore(objectSpaceProvider.EntityStore);
             RegisterBOTypes(XafTypesInfo.Instance);
