@@ -12,18 +12,17 @@ Since XAF stores reports in the database, and XAF reports use the ObjectSpace to
 
 ## Implementation Details
 
-1. Create a custom class which implements the IReportObjectSpaceProvider interface. Please refer to the _ExportXafReport\MyReportObjectSpaceProvider.xx_ file for implementation details.
-2. Create a custom class which inherits the `ReportDataSourceHelper` class and override the `CreateReportObjectSpaceProvider` method as shown in the _ExportXafReport/MyReportDataSourceHelper.xx_ class.
+1. Create a custom class which implements the IReportObjectSpaceProvider interface. Please refer to the [MyReportObjectSpaceProvider](CS/EFCore/ExportReportEF/ExportXAFReport/MyReportObjectSpaceProvider.cs) file for implementation details.
+2. Create a custom class which inherits the [ReportDataSourceHelper](https://docs.devexpress.com/eXpressAppFramework/DevExpress.ExpressApp.ReportsV2.ReportDataSourceHelper) class and override the `CreateReportObjectSpaceProvider` method as shown in the [MyReportDataSourceHelper](CS/EFCore/ExportReportEF/ExportXAFReport/MyReportDataSourceHelper.cs) class.
 3. Create ObjectSpace using the approach from the [Access XAF Application Data in a non-XAF Application](https://docs.devexpress.com/eXpressAppFramework/113709/data-manipulation-and-business-logic/access-xaf-application-data-in-a-non-xaf-application) article and register required types in the TypesInfo. Please refer _ExportXafReport/Program.xx_ file.
 4. Use the approach described in the [How to: Print a Report Without Displaying a Preview](https://docs.devexpress.com/eXpressAppFramework/113601/shape-export-print-data/reports/task-based-help/how-to-print-a-report-without-displaying-a-preview) article to access and print a report.
  
-This example contains XPO and EF implementations.
 
 ## Files to Review
 
-- [MyReportObjectSpaceProvider.cs](./CS/EFCore/ExportReportEF/ExportXAFReport/MyReportObjectSpaceProvider.cs)
-- [MyReportDataSourceHelper.cs](./CS/EFCore/ExportReportEF/ExportXAFReport/MyReportDataSourceHelper.cs)
-- [Program.cs](./CS/EFCore/ExportReportEF/ExportXAFReport/Program.cs)
+- [MyReportObjectSpaceProvider](CS/EFCore/ExportReportEF/ExportXAFReport/MyReportObjectSpaceProvider.cs)
+- [MyReportDataSourceHelper](CS/EFCore/ExportReportEF/ExportXAFReport/MyReportDataSourceHelper.cs)
+- [Program.cs](CS/EFCore/ExportReportEF/ExportXAFReport/Program.cs)
 
 ## Documentation
 
