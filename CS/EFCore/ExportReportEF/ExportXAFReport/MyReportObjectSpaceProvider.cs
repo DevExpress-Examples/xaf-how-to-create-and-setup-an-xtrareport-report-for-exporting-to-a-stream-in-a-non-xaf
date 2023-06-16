@@ -3,28 +3,21 @@ using DevExpress.ExpressApp.ReportsV2;
 using DevExpress.Persistent.Base.ReportsV2;
 using System;
 
-namespace ExportXafReport
-{
-    public class MyReportObjectSpaceProvider : IReportObjectSpaceProvider, IObjectSpaceCreator 
-    {
+namespace ExportXafReport {
+    public class MyReportObjectSpaceProvider : IReportObjectSpaceProvider, IObjectSpaceCreator {
         IObjectSpaceProvider objectSpaceProvider;
         IObjectSpace objectSpace;
-        public MyReportObjectSpaceProvider(IObjectSpaceProvider objectSpaceProvider)
-        {
+        public MyReportObjectSpaceProvider(IObjectSpaceProvider objectSpaceProvider) {
             this.objectSpaceProvider = objectSpaceProvider;
         }
-        public void DisposeObjectSpaces()
-        {
-            if (objectSpace != null)
-            {
+        public void DisposeObjectSpaces() {
+            if (objectSpace != null) {
                 objectSpace.Dispose();
                 objectSpace = null;
             }
         }
-        public IObjectSpace GetObjectSpace(Type type)
-        {
-            if (objectSpace == null)
-            {
+        public IObjectSpace GetObjectSpace(Type type) {
+            if (objectSpace == null) {
                 objectSpace = objectSpaceProvider.CreateObjectSpace();
             }
             return objectSpace;

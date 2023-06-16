@@ -2,18 +2,14 @@
 using DevExpress.ExpressApp.ReportsV2;
 using DevExpress.Persistent.Base.ReportsV2;
 
-namespace ExportXafReport
-{
-    public class MyReportDataSourceHelper : ReportDataSourceHelper
-    {
+namespace ExportXafReport {
+    public class MyReportDataSourceHelper : ReportDataSourceHelper {
         IObjectSpaceProvider objectSpaceProvider;
         public MyReportDataSourceHelper(IObjectSpaceProvider objectSpaceProvider)
-            : base(null)
-        {
+            : base(null) {
             this.objectSpaceProvider = objectSpaceProvider;
         }
-        protected override IReportObjectSpaceProvider CreateReportObjectSpaceProvider()
-        {
+        protected override IReportObjectSpaceProvider CreateReportObjectSpaceProvider() {
             return new MyReportObjectSpaceProvider(objectSpaceProvider);
         }
     }
