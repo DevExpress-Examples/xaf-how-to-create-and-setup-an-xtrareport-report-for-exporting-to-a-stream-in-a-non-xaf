@@ -1,50 +1,42 @@
-﻿using DevExpress.Data.Filtering;
-using DevExpress.ExpressApp;
+﻿using Aqua.EnumerableExtensions;
+using DevExpress.ExpressApp.Core;
+using DevExpress.ExpressApp.Core.Services;
 using DevExpress.ExpressApp.DC;
-using DevExpress.ExpressApp.EFCore;
 using DevExpress.ExpressApp.ReportsV2;
 using DevExpress.Persistent.BaseImpl.EF;
-using DevExpress.XtraReports.UI;
 using ExportReportDemo.Module.BusinessObjects;
-using ExportReportEF.Module.BusinessObjects;
-using ExportXafReport;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace MyApp // Note: actual namespace depends on the project name.
 {
     internal class Program {
-        const string connectionString = @"Integrated Security=SSPI;Pooling=false;Data Source=(localdb)\mssqllocaldb;Initial Catalog=ExportReportEF";
         static void Main(string[] args) {
             Console.WriteLine("Hello World!");
 
-            using (EFCoreObjectSpaceProvider<ExportReportEFEFCoreDbContext> objectSpaceProvider = CreateObjectSpaceProvider()) {
-                IObjectSpace objectSpace = objectSpaceProvider.CreateObjectSpace();
-                ReportDataV2 reportData = objectSpace.FindObject<ReportDataV2>(new BinaryOperator("DisplayName", "Employees Report"));
-                ExportReport(reportData, objectSpaceProvider);
-            }
+            ServiceCollection serviceDescriptors = new ServiceCollection();
+            serviceDescriptors.AddXafCore();
+            serviceDescriptors.AddXafReportingCore();
+            serviceDescriptors.AddScoped<IObjectSpaceProviderFactory, CustomObjectSpaceProviderFactory>();
+
+            IServiceProvider serviceProvider = serviceDescriptors.BuildServiceProvider();
+
+            var typesInfo = serviceProvider.GetRequiredService<ITypesInfo>();
+            InitTypesInfo(typesInfo, serviceProvider.GetRequiredService<IObjectSpaceProviderFactory>());
+            RegisterBOTypes(typesInfo);
+
+            IReportExportService reportExportService = serviceProvider.GetRequiredService<IReportExportService>();
+            using var report = reportExportService.LoadReport<ReportDataV2>(data => data.DisplayName == "Employees Report");
+            reportExportService.SetupReport(report);
+            report.ExportToPdf("testEFCore.pdf");
 
             Console.WriteLine("Done");
-
         }
-        private static EFCoreObjectSpaceProvider<ExportReportEFEFCoreDbContext> CreateObjectSpaceProvider() {
-            EFCoreObjectSpaceProvider<ExportReportEFEFCoreDbContext> objectSpaceProvider = new EFCoreObjectSpaceProvider<ExportReportEFEFCoreDbContext>(
-                (builder, _) => { builder.UseSqlServer(connectionString).UseChangeTrackingProxies(); });
-            ((TypesInfo)XafTypesInfo.Instance).AddEntityStore(objectSpaceProvider.EntityStore);
-            RegisterBOTypes(XafTypesInfo.Instance);
-            return objectSpaceProvider;
+        static void InitTypesInfo(ITypesInfo typesInfo, IObjectSpaceProviderFactory osProviderFactory) {
+            var osProviders = osProviderFactory.CreateObjectSpaceProviders();
+            osProviders.ForEach(osProvider => ((TypesInfo)typesInfo).AddEntityStore(osProvider.EntityStore));
         }
-
-        private static void RegisterBOTypes(ITypesInfo typesInfo) {
+        static void RegisterBOTypes(ITypesInfo typesInfo) {
             typesInfo.RegisterEntity(typeof(Employee));
         }
-
-        private static void ExportReport(IReportDataV2 reportData, IObjectSpaceProvider objectSpaceProvider) {
-            XtraReport report = ReportDataProvider.ReportsStorage.LoadReport(reportData);
-            MyReportDataSourceHelper reportDataSourceHelper = new MyReportDataSourceHelper(objectSpaceProvider);
-            ReportDataProvider.ReportObjectSpaceProvider = new MyReportObjectSpaceProvider(objectSpaceProvider);
-            reportDataSourceHelper.SetupBeforePrint(report);
-            report.ExportToPdf("testEF.pdf");
-        }
-
     }
 }
