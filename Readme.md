@@ -1,25 +1,18 @@
-<!-- default badges list -->
-![](https://img.shields.io/endpoint?url=https://codecentral.devexpress.com/api/v1/VersionRange/128588873/23.1.3%2B)
-[![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T275059)
-[![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
-<!-- default badges end -->
-
 # XAF - How to create and setup an XtraReport report for exporting to a Stream in a non-XAF application
 
-This example illustrates how to access XAF report stored in the database and populate it with data in a non-XAF application.
+This example illustrates how to access an XAF report stored in the database and populate it with data in a non-XAF application.
 
-Since XAF stores reports in the database, and XAF reports use the ObjectSpace to retrieve data from database, it is necessary to connect to the XAF database and create ObjectSpace to use XAF reports in a non-XAF application.
+Since XAF stores reports in the database and XAF reports use Object Spaces to retrieve data from the database, it is necessary to connect to the XAF database and create an Object Space to use XAF reports in a non-XAF application.
 
 ## Implementation Details
 
-1. Create a custom class which implements the IObjectSpaceProviderFactory interface. Please refer to the [CustomObjectSpaceProviderFactory](CS/EFCore/ExportReportEF/ExportXAFReport/CustomObjectSpaceProviderFactory.cs) file for implementation details.
-2. Create ObjectSpace using the class created at step 1.
+1. Create a custom class that implements the `IObjectSpaceProviderFactory` interface. Please refer to the [CustomObjectSpaceProviderFactory.cs](CS/EFCore/ExportReportEF/ExportXAFReport/CustomObjectSpaceProviderFactory.cs) file for implementation details.
+2. Create an Object Space using the class you created in step 1.
 3. Use the approach described in the [How to: Print a Report Without Displaying a Preview](https://docs.devexpress.com/eXpressAppFramework/113601/shape-export-print-data/reports/task-based-help/how-to-print-a-report-without-displaying-a-preview) article to access and print a report.
- 
 
 ## Files to Review
 
-- [CustomObjectSpaceProviderFactory](CS/EFCore/ExportReportEF/ExportXAFReport/CustomObjectSpaceProviderFactory.cs)
+- [CustomObjectSpaceProviderFactory.cs](CS/EFCore/ExportReportEF/ExportXAFReport/CustomObjectSpaceProviderFactory.cs)
 - [Program.cs](CS/EFCore/ExportReportEF/ExportXAFReport/Program.cs)
 
 ## Documentation
