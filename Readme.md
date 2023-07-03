@@ -14,6 +14,7 @@ Since XAF stores reports in the database and XAF reports use Object Spaces to re
 ## Files to Review
 
 - [CustomObjectSpaceProviderFactory.cs](CS/EFCore/ExportReportEF/ExportXAFReport/CustomObjectSpaceProviderFactory.cs)
+- [Program.cs](CS/EFCore/ExportReportEF/ExportXAFReport/Program.cs)
 
 ## Documentation
 
