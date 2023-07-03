@@ -6,20 +6,19 @@ Since XAF stores reports in the database and XAF reports use Object Spaces to re
 
 ## Implementation Details
 
-1. Create a custom class that implements the `IObjectSpaceProviderFactory` interface. Please refer to the [CustomObjectSpaceProviderFactory.cs](CS/EFCore/ExportReportEF/ExportXAFReport/CustomObjectSpaceProviderFactory.cs) file for implementation details.
-2. Create an Object Space using the class you created in step 1.
-3. Use the approach described in the [How to: Print a Report Without Displaying a Preview](https://docs.devexpress.com/eXpressAppFramework/113601/shape-export-print-data/reports/task-based-help/how-to-print-a-report-without-displaying-a-preview) article to access and print a report.
+1. Create a custom class that implements the `IObjectSpaceProviderFactory` interface. Please refer to the [CustomObjectSpaceProviderFactory.cs](CS/EFCore/ExportReportEF/ExportXAFReport/CustomObjectSpaceProviderFactory.cs) file for implementation details. This class is used as a service to create `IObjectSpace` objects on demand.
+2. Create the `ServiceCollection` to register required XAF services and your `CustomObjectSpaceProviderFactory` service.
+4. Use the `IReportExportService` service to load and prepare a report.
+
 
 ## Files to Review
 
 - [CustomObjectSpaceProviderFactory.cs](CS/EFCore/ExportReportEF/ExportXAFReport/CustomObjectSpaceProviderFactory.cs)
-- [Program.cs](CS/EFCore/ExportReportEF/ExportXAFReport/Program.cs)
 
 ## Documentation
 
 - [How to: Use XAF Reports in a non-XAF Application](https://docs.devexpress.com/eXpressAppFramework/114515/shape-export-print-data/reports/task-based-help/how-to-use-xaf-reports-in-a-non-xaf-application)
 - [Access XAF Application Data in a non-XAF Application](https://docs.devexpress.com/eXpressAppFramework/113709/data-manipulation-and-business-logic/access-xaf-application-data-in-a-non-xaf-application)
-- [How to: Print a Report Without Displaying a Preview](https://docs.devexpress.com/eXpressAppFramework/113601/shape-export-print-data/reports/task-based-help/how-to-print-a-report-without-displaying-a-preview)
 
 ## More Examples
 
