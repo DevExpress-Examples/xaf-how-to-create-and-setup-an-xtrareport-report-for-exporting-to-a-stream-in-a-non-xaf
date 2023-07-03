@@ -8,7 +8,7 @@ Since XAF stores reports in the database and XAF reports use Object Spaces to re
 
 1. Create a custom class that implements the `IObjectSpaceProviderFactory` interface. Please refer to the [CustomObjectSpaceProviderFactory.cs](CS/EFCore/ExportReportEF/ExportXAFReport/CustomObjectSpaceProviderFactory.cs) file for implementation details. This class is used as a service to create `IObjectSpace` objects on demand.
 2. Create the `ServiceCollection` to register required XAF services and your `CustomObjectSpaceProviderFactory` service.
-4. Use the `IReportExportService` service to load and prepare a report.
+3. Use the `IReportExportService` service to load and prepare a report.
 
 
 ## Files to Review
