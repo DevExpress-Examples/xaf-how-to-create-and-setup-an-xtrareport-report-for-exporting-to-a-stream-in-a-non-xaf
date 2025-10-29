@@ -7,9 +7,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="DevExpress.ExpressApp.EFCore" Version="25.2.1-alpha-25302" />
-    <PackageReference Include="DevExpress.ExpressApp.ReportsV2.Blazor" Version="25.2.1-alpha-25302" />
-    <PackageReference Include="DevExpress.Persistent.BaseImpl.EFCore" Version="25.2.1-alpha-25302" />
+    <PackageReference Include="DevExpress.ExpressApp.EFCore" Version="24.2.1-alpha-24207" />
+    <PackageReference Include="DevExpress.ExpressApp.ReportsV2.Blazor" Version="24.2.1-alpha-24207" />
+    <PackageReference Include="DevExpress.Persistent.BaseImpl.EFCore" Version="24.2.1-alpha-24207" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ExportReportEF.Module\ExportReportEF.Module.csproj" />
