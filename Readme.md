@@ -32,7 +32,7 @@ Since XAF stores reports in the database and XAF reports use Object Spaces to re
 - [How to change the XtraReport layout dynamically via a custom Report Parameters Object](https://github.com/DevExpress-Examples/XAF_how-to-change-the-xtrareport-layout-dynamically-via-a-custom-report-parameters-object-e1930)
 
 <!-- feedback -->
-## Does this example address your development requirements/objectives?
+## Does This Example Address Your Development Requirements/Objectives?
 
 [<img src="https://www.devexpress.com/support/examples/i/yes-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=xaf-how-to-create-and-setup-an-xtrareport-report-for-exporting-to-a-stream-in-a-non-xaf&~~~was_helpful=yes) [<img src="https://www.devexpress.com/support/examples/i/no-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=xaf-how-to-create-and-setup-an-xtrareport-report-for-exporting-to-a-stream-in-a-non-xaf&~~~was_helpful=no)
 
